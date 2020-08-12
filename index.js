@@ -1,24 +1,40 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-
-
+let votingAge = "18";
+let age = "28";
+if (age > votingAge) {
+    console.log("True");
+} else {
+    console.log("False");
+}
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+let inst = "guitar";
+let music = "classical";
 
-
-
-
+if (music === "metal") {
+    inst = "guitar";
+} else if (music === "classical") {
+    inst = "piano";
+}
+console.log(inst);
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-
+console.log(Number("1999"));
+// console.log(Number("1999") + 1);
 
 
 
 
 //Task d: Write a function to multiply a*b 
-
+let a = 1;
+let b = 2;
+function mult() {
+    console.log(a * b);
+}
+mult();
 
 
 
@@ -27,6 +43,12 @@
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+function calc() {
+    let age = 28;
+    let dogAge = age * 7;
+    console.log("Your age in dog years is" + " " + dogAge);
+}
+calc();
 
 
 
@@ -49,9 +71,27 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
+function dCalc() {
+    let a = 1;
+    let w = 15;
+    if (a >= 1 && w <= 5) {
+        console.log(w * 0.05);
+    } else if (a >= 1 && w < 11) {
+        console.log(w * 0.04);
+    } else if (a >= 1 && w < 16) {
+        console.log(w * 0.03);
+    } else if (a >= 1 && w >= 16) {
+        console.log(w * 0.02);
+    } else if (a >= 0.16666666667 && a <= 0.33333333333) {
+        console.log("Weight times .10 but it doesn't matter because peramiters have been met and no weight specs were given anyway.");
+    } else if (a >= 0.33333333334 && a <= 0.58333333333) {
+        console.log("Weight times .05 but it doesn't matter because peramiters have been met and no weight specs were given anyway.");
+    } else {
+        console.log("Weight times .04 but it doesn't matter because peramiters have been met and no weight specs were given anyway.");
+    }
+}
 
-
-
+dCalc ();
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
@@ -59,8 +99,67 @@
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
-
+const getUserChoice = userInput => {
+    userInput = userInput.toLowerCase();
+    if (userInput === "rock" || userInput === "paper" || userInput === "scissors") {
+      return userInput;
+    } else {
+      console.log("Error.");
+    }
+  }
   
+  
+  const getComputerChoice = () => {
+    const randomNumber = (Math.floor(Math.random() * 3));
+    switch (randomNumber) {
+      case 0: 
+        return "rock";
+      case 1:
+        return "paper";
+      case 2:
+        return "scissors";
+    }
+  };
+  
+  const determineWinner = (userChoice, computerChoice) => {
+    if (userChoice === computerChoice) {
+      return "This game is a tie.";
+    }
+    if (userChoice === "rock") {
+      if (computerChoice === "paper") {
+        return "Computer wins."; 
+      } else {
+        return "You win.";
+      }
+    }
+  
+    if (userChoice === "paper") {
+      if (computerChoice === "scissors") {
+        return "Computer wins.";
+      } else {
+        return "You win.";
+      }
+    }
+  
+    if (userChoice === "scissors") {
+      if (computerChoice === "rock") {
+       return "Computer wins.";
+      } else {
+        return "You win.";
+      }
+    }
+  };
+  
+  const playGame = () => {
+    const userChoice = getUserChoice("paper");
+    const computerChoice = getComputerChoice();
+    console.log("You threw: " + userChoice);
+    console.log("The computer threw: " + computerChoice);
+  
+    console.log(determineWinner(userChoice, computerChoice));
+  };
+  
+  playGame();  
   
 
 /************************************************************** Task 5 **************************************************************/
