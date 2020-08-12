@@ -163,14 +163,19 @@ const getUserChoice = userInput => {
   
 
 /************************************************************** Task 5 **************************************************************/
-//Metric Converter
+//
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
-
-
+let kilometers = parseInt(prompt("Enter kilometers:"));
+let miles = kilometers * 0.62137;
+console.log(miles + " Miles");
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
+let feet = parseInt(prompt("Enter feet:"));
+let cm = feet / 0.032808;
+console.log(cm + " Centimeters");
+
   
 
 
@@ -180,7 +185,14 @@ const getUserChoice = userInput => {
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+let num = 99;
+while (num >= 1) {
+    console.log(num + " bottles of soda on the wall" + num + " bottles of soda, take one down pass it around. " + (num-1) + " bottles of soda on the wall.");
+    }
+
+    num --;
+
+}
 
 
 
