@@ -93,6 +93,28 @@ function dCalc() {
 
 dCalc ();
 
+// function dCalc(a, w) {
+//   if (a >= 1 && w <= 5) {
+//       return (w * 0.05);
+//   } else if (a >= 1 && w < 11) {
+//       return (w * 0.04);
+//   } else if (a >= 1 && w < 16) {
+//       return (w * 0.03);
+//   } else if (a >= 1 && w >= 16) {
+//       return (w * 0.02);
+//   } else if (a < 1 && a >= 0.583) {
+//      return (w * 0.04);
+//   } else if (a < 0.583 && a >= 0.333) {
+//       return (w * 0.05);
+//   } else if (a < 0.333) {
+//     return (w * 0.1); 
+//   } else {
+//   return "Error";
+//   }
+// }
+// dCalc ();
+
+
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
 // Your function should take a string (either rock paper or sissors)
@@ -185,14 +207,16 @@ console.log(cm + " Centimeters");
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
+function annoyingSong() {
 let num = 99;
 while (num >= 1) {
-    console.log(num + " bottles of soda on the wall" + num + " bottles of soda, take one down pass it around. " + (num-1) + " bottles of soda on the wall.");
-    }
-
+    console.log(num + " bottles of soda on the wall " + num + " bottles of soda, take one down pass it around. " + (num-1) + " bottles of soda on the wall.");
     num --;
-
+  }
 }
+annoyingSong();
+
+ 
 
 
 
@@ -205,8 +229,30 @@ while (num >= 1) {
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
+function random() {
+let ranNum = Math.floor(Math.random() * 101);
+if (ranNum > 89) {
+  console.log ("A")
+  return Math.floor(ranNum);
 
+  } else if (ranNum > 79) {
+  console.log ("B")
+  return Math.floor(ranNum);
+
+  } else if (ranNum > 69) {
+  console.log ("C")
+  return Math.floor(ranNum);
+
+  } else if (ranNum > 59) {
+  console.log ("D")
+  return Math.floor(ranNum);
+
+  } else if (ranNum <= 59) {
+  console.log ("F")
+  return Math.floor(ranNum);
+  }
+}
+random();
   
   
 
@@ -222,8 +268,6 @@ while (num >= 1) {
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
 
 
 
