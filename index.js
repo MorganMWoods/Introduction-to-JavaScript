@@ -23,18 +23,14 @@ console.log(inst);
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 console.log(Number("1999"));
-// console.log(Number("1999") + 1);
-
 
 
 
 //Task d: Write a function to multiply a*b 
-let a = 1;
-let b = 2;
-function mult() {
-    console.log(a * b);
+function mult(a, b) {
+    return a * b;
 }
-mult();
+console.log(mult(2, 4));
 
 
 
@@ -43,13 +39,11 @@ mult();
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-function calc() {
-    let age = 28;
-    let dogAge = age * 7;
-    console.log("Your age in dog years is" + " " + dogAge);
+function calc(age, dogAge) {
+    return age, dogAge;
 }
-calc();
-
+const result = calc(28, age * 7);
+console.log(result);
 
 
 
@@ -71,48 +65,28 @@ calc();
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-function dCalc() {
-    let a = 1;
-    let w = 15;
-    if (a >= 1 && w <= 5) {
-        console.log(w * 0.05);
-    } else if (a >= 1 && w < 11) {
-        console.log(w * 0.04);
-    } else if (a >= 1 && w < 16) {
-        console.log(w * 0.03);
-    } else if (a >= 1 && w >= 16) {
-        console.log(w * 0.02);
-    } else if (a >= 0.16666666667 && a <= 0.33333333333) {
-        console.log("Weight times .10 but it doesn't matter because peramiters have been met and no weight specs were given anyway.");
-    } else if (a >= 0.33333333334 && a <= 0.58333333333) {
-        console.log("Weight times .05 but it doesn't matter because peramiters have been met and no weight specs were given anyway.");
-    } else {
-        console.log("Weight times .04 but it doesn't matter because peramiters have been met and no weight specs were given anyway.");
-    }
+
+function dCalc(a, w) {
+  if (a >= 1 && w <= 5) {
+      return (w * 0.05);
+  } else if (a >= 1 && w < 11) {
+      return (w * 0.04);
+  } else if (a >= 1 && w < 16) {
+      return (w * 0.03);
+  } else if (a >= 1 && w >= 16) {
+      return (w * 0.02);
+  } else if (a < 1 && a >= 0.583) {
+     return (w * 0.04);
+  } else if (a < 0.583 && a >= 0.333) {
+      return (w * 0.05);
+  } else if (a < 0.333) {
+    return (w * 0.1); 
+  } else {
+  return "Error";
+  }
 }
-
-dCalc ();
-
-// function dCalc(a, w) {
-//   if (a >= 1 && w <= 5) {
-//       return (w * 0.05);
-//   } else if (a >= 1 && w < 11) {
-//       return (w * 0.04);
-//   } else if (a >= 1 && w < 16) {
-//       return (w * 0.03);
-//   } else if (a >= 1 && w >= 16) {
-//       return (w * 0.02);
-//   } else if (a < 1 && a >= 0.583) {
-//      return (w * 0.04);
-//   } else if (a < 0.583 && a >= 0.333) {
-//       return (w * 0.05);
-//   } else if (a < 0.333) {
-//     return (w * 0.1); 
-//   } else {
-//   return "Error";
-//   }
-// }
-// dCalc ();
+const dFeed = dCalc (1, 15);
+console.log(dFeed);
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -173,7 +147,7 @@ const getUserChoice = userInput => {
   };
   
   const playGame = () => {
-    const userChoice = getUserChoice("paper");
+    const userChoice = getUserChoice(prompt("Choose rock, paper, or scissors"));
     const computerChoice = getComputerChoice();
     console.log("You threw: " + userChoice);
     console.log("The computer threw: " + computerChoice);
@@ -210,7 +184,7 @@ console.log(cm + " Centimeters");
 function annoyingSong() {
 let num = 99;
 while (num >= 1) {
-    console.log(num + " bottles of soda on the wall " + num + " bottles of soda, take one down pass it around. " + (num-1) + " bottles of soda on the wall.");
+    console.log(`${num}bottles of soda on the wall ${num} bottles of soda, take one down pass it around. ${num-1} bottles of soda on the wall.`);
     num --;
   }
 }
